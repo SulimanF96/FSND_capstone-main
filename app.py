@@ -27,16 +27,18 @@ def create_app(test_config=None):
   @app.route('/movies', methods=['POST'])
   @requires_auth("post:movie")
   def create_movie(payload):
-     try:
+        
          new_movie = request.get_json()
+         
+         if(len(request.get_json()) != 2):
+               abort(400)
+               
          movie = Movie(new_movie['title'], new_movie['release_date'] )
          movie.insert()
          return jsonify({
         'success': True,
         'movie': [movie.format() for movie in Movie.query.all()]
       })
-     except:
-         abort(422)
 
   @app.route('/movies/<movie_id>', methods=['PATCH'])
   @requires_auth("patch:movie")
@@ -80,16 +82,17 @@ def create_app(test_config=None):
   @app.route('/actors', methods=['POST'])
   @requires_auth("post:actor")
   def create_actor(payload):
-     try:
          new_actor = request.get_json()
+         
+         if(len(new_actor) != 3):
+            abort(400)
+            
          actor = Actor(new_actor['name'], new_actor['age'], new_actor['gender'])
          actor.insert()
          return jsonify({
         'success': True,
         'actors': [actor.format() for actor in Actor.query.all()]
       })
-     except:
-         abort(422)
 
   @app.route('/actors/<actor_id>', methods=['PATCH'])
   @requires_auth("patch:actor")
