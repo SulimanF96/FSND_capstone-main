@@ -1,11 +1,12 @@
 from sqlalchemy import Column, String, Integer
 from flask_sqlalchemy import SQLAlchemy
 import json
+import os
 # from flask_migrate import Migrate
 
 # database_path = os.environ['DATABASE_URL']
 database_name = "casting_agency"
-database_path = "postgres://{}/{}".format('postgres:1234Qwer@localhost:5432', database_name)
+database_path = "postgres://postgres:1234Qwer@localhost:5432/casting_agency"
 
 db = SQLAlchemy()
 
@@ -13,12 +14,13 @@ db = SQLAlchemy()
 setup_db(app)
     binds a flask application and a SQLAlchemy service
 '''
-def setup_db(app,  database_path=database_path):
+def setup_db(app,  database_path=database_path, isForTest=False):
     app.config["SQLALCHEMY_DATABASE_URI"] = database_path
     app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
     db.app = app
     db.init_app(app)
-    db.create_all()
+    if(isForTest == True):
+        db.create_all()
     
 def db_drop_and_create_all():
     db.drop_all()

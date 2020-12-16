@@ -1,0 +1,1 @@
+export DATABASE_URL='postgres://postgres:1234Qwer@localhost:5432/casting_agency'
