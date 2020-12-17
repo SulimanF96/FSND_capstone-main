@@ -1,0 +1,792 @@
+{
+	"info": {
+		"_postman_id": "a27d222f-b68f-4b97-bb7d-8b5d4540e8c5",
+		"name": "capstone_FSND_development",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Casting Assistant",
+			"item": [
+				{
+					"name": "/movies",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/movies",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"movies"
+							]
+						},
+						"description": "get all movies"
+					},
+					"response": []
+				},
+				{
+					"name": "/movies",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "5fafde5a-e0ce-4c87-a1a9-7a0ea4d87dac",
+								"exec": [
+									"pm.test(\"Status code is 401\", function () {\r",
+									"    pm.response.to.have.status(401);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"The legend of 1900\",\r\n    \"release_date\": \"1990\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/movies",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"movies"
+							]
+						},
+						"description": "add a new movie"
+					},
+					"response": []
+				},
+				{
+					"name": "/movies/movie_id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "cfd4adb3-c430-4144-8fd1-5b3a75cdc3fa",
+								"exec": [
+									"pm.test(\"Status code is 401\", function () {\r",
+									"    pm.response.to.have.status(401);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/movies/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"movies",
+								"1"
+							]
+						},
+						"description": "update a movie partially"
+					},
+					"response": []
+				},
+				{
+					"name": "/movies/movie_id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "61414e94-2c62-4af4-8198-b88d8633f9b4",
+								"exec": [
+									"pm.test(\"Status code is 401\", function () {\r",
+									"    pm.response.to.have.status(401);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"updated\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/movies/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"movies",
+								"1"
+							]
+						},
+						"description": "delete a movie"
+					},
+					"response": []
+				},
+				{
+					"name": "/actors",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/actors",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"actors"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/actors",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "374ea7af-e57f-4273-a53b-dd780a8b84a5",
+								"exec": [
+									"pm.test(\"Status code is 401\", function () {\r",
+									"    pm.response.to.have.status(401);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"test\",\r\n    \"age\": 50,\r\n    \"gender\": \"male\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/actors",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"actors"
+							]
+						},
+						"description": "add a new actor"
+					},
+					"response": []
+				},
+				{
+					"name": "/actors/actor_id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "5c88c1d4-d0a5-4318-94d8-02091ba43ad5",
+								"exec": [
+									"pm.test(\"Status code is 401\", function () {\r",
+									"    pm.response.to.have.status(401);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/actors/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"actors",
+								"1"
+							]
+						},
+						"description": "delete an actor"
+					},
+					"response": []
+				},
+				{
+					"name": "/actors/actor_id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "3000a447-08d1-4b3e-b1f0-08b1fca64a7a",
+								"exec": [
+									"pm.test(\"Status code is 401\", function () {\r",
+									"    pm.response.to.have.status(401);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"test\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/actors/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"actors",
+								"1"
+							]
+						},
+						"description": "update actor partially"
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IldRcjd4dks4eU82eWgwZlFUMlFJRSJ9.eyJpc3MiOiJodHRwczovL2Rldi03M2Rpb3Zlby51cy5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NWZhZDgxMmEzYWIyZTQwMDZlZmQyZTA3IiwiYXVkIjoiY2Fwc3RvbmVBcGkiLCJpYXQiOjE2MDgyMzg5MDYsImV4cCI6MTYwODMyNTMwNiwiYXpwIjoiQUFmb2tFNHIyYWNxUzROSzk0M2l6NExzN0N3amhoWjAiLCJzY29wZSI6IiIsInBlcm1pc3Npb25zIjpbImdldDphY3RvcnMiLCJnZXQ6bW92aWVzIl19.DmXZTUMv8keMSfNf43pWhWY1UFrU_jlXN0vT76C4ch42aHBzt_CwykOA6XcmJXst7IHuRSkY2KeHtsGzNXirZsLL5ov_BXU5sznWtJG5UnJvALHf4XLYTdIACcL6WsZJVmoTp704XhIhW3SNLdpCzjEbWA_LBIMFS_EuIPrAS0ACeYhknvx0arer1DWDZ02rgOD2j_89YImszzvNtSaLf-DuYEoKWzoUl1joAeAKlRUnkQYA5bbc1Q3PLFAHVD2Ea3bRdMaD3un2ndHPIGXUS2tkKJG_m9DQghpPtpFBiwzquoWrrLbUIBYNqFel9OAEYgjJtxagMwUy9CWZX67o_A",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "f0e4b9bc-cacf-40e5-bc5a-f72698f6fd5c",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "4ff0da17-2874-48b8-87ba-54552583ebde",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Casting Director",
+			"item": [
+				{
+					"name": "/movies",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/movies",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"movies"
+							]
+						},
+						"description": "get all movies"
+					},
+					"response": []
+				},
+				{
+					"name": "/movies",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "4b516bcb-69e5-467c-864e-210f1b49c521",
+								"exec": [
+									"pm.test(\"Status code is 401\", function () {\r",
+									"    pm.response.to.have.status(401);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"The legend of 1900\",\r\n    \"release_date\": \"1990\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/movies",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"movies"
+							]
+						},
+						"description": "add a new movie"
+					},
+					"response": []
+				},
+				{
+					"name": "/movies/movie_id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "c36494ef-6940-4f36-9ebb-75c352e4108e",
+								"exec": [
+									"pm.test(\"Status code is 401\", function () {\r",
+									"    pm.response.to.have.status(401);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/movies/5",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"movies",
+								"5"
+							]
+						},
+						"description": "update a movie partially"
+					},
+					"response": []
+				},
+				{
+					"name": "/movies/movie_id",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"updated\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/movies/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"movies",
+								"1"
+							]
+						},
+						"description": "delete a movie"
+					},
+					"response": []
+				},
+				{
+					"name": "/actors",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/actors",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"actors"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/actors",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"test\",\r\n    \"age\": 50,\r\n    \"gender\": \"male\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/actors",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"actors"
+							]
+						},
+						"description": "add a new actor"
+					},
+					"response": []
+				},
+				{
+					"name": "/actors/actor_id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/actors/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"actors",
+								"1"
+							]
+						},
+						"description": "delete an actor"
+					},
+					"response": []
+				},
+				{
+					"name": "/actors/actor_id",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"test\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/actors/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"actors",
+								"1"
+							]
+						},
+						"description": "update actor partially"
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IldRcjd4dks4eU82eWgwZlFUMlFJRSJ9.eyJpc3MiOiJodHRwczovL2Rldi03M2Rpb3Zlby51cy5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NWZhZDdiMzJjZjMwNDUwMDc2YzIyZTU4IiwiYXVkIjoiY2Fwc3RvbmVBcGkiLCJpYXQiOjE2MDgyMzg3NDUsImV4cCI6MTYwODMyNTE0NSwiYXpwIjoiQUFmb2tFNHIyYWNxUzROSzk0M2l6NExzN0N3amhoWjAiLCJzY29wZSI6IiIsInBlcm1pc3Npb25zIjpbImRlbGV0ZTphY3RvciIsImdldDphY3RvcnMiLCJnZXQ6bW92aWVzIiwicGF0Y2g6YWN0b3IiLCJwYXRjaDptb3ZpZSIsInBvc3Q6YWN0b3IiXX0.WFnkn4_tmdAr9LC1pFD1pBghwddUn55BQBIOvf1Pa5aRGVLPnmAAsI3SQQhf3H-zujbCd830WnDgYTV2Hl_r10-vLxVAyx4qUY7W88jOKYXa9HQisOGnTjKxhx0gzpFPX8JslsI9ofbczDeLqu9QjjA6jLXq6H1gboNydenWlncLhyju17WEbz90vkawrd_rOTtL4MQ1nssEZZhMLZhNWHjM0jeEDzH0-lN9nL578Ec2YBrjkXuGP824oTKe1Dypb89mJaNlsKNDG87c2l4Spszm3bFYeL6RMoiAtCKZQh1Ps0aoMALUTqMUitn2xh61rppxDt_4dDjHy_2ADFlZZw",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "1982f11d-f774-47c8-adaf-a8e86b29d684",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "082ada30-a5dd-4ada-a355-3679981bc1f8",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Executive Producer",
+			"item": [
+				{
+					"name": "/movies",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/movies",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"movies"
+							]
+						},
+						"description": "get all movies"
+					},
+					"response": []
+				},
+				{
+					"name": "/movies",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"The legend of 1900\",\r\n    \"release_date\": \"1990\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/movies",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"movies"
+							]
+						},
+						"description": "add a new movie"
+					},
+					"response": []
+				},
+				{
+					"name": "/movies/movie_id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/movies/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"movies",
+								"1"
+							]
+						},
+						"description": "update a movie partially"
+					},
+					"response": []
+				},
+				{
+					"name": "/movies/movie_id",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"updated\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/movies/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"movies",
+								"1"
+							]
+						},
+						"description": "delete a movie"
+					},
+					"response": []
+				},
+				{
+					"name": "/actors",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/actors",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"actors"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/actors",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"test\",\r\n    \"age\": 50,\r\n    \"gender\": \"male\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/actors",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"actors"
+							]
+						},
+						"description": "add a new actor"
+					},
+					"response": []
+				},
+				{
+					"name": "/actors/actor_id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/actors/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"actors",
+								"1"
+							]
+						},
+						"description": "delete an actor"
+					},
+					"response": []
+				},
+				{
+					"name": "/actors/actor_id",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"test\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/actors/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"actors",
+								"1"
+							]
+						},
+						"description": "update actor partially"
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IldRcjd4dks4eU82eWgwZlFUMlFJRSJ9.eyJpc3MiOiJodHRwczovL2Rldi03M2Rpb3Zlby51cy5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NWY5OWJiMDU3NWIyZjYwMDY5YWJmZmFlIiwiYXVkIjoiY2Fwc3RvbmVBcGkiLCJpYXQiOjE2MDgyMzg5OTcsImV4cCI6MTYwODMyNTM5NywiYXpwIjoiQUFmb2tFNHIyYWNxUzROSzk0M2l6NExzN0N3amhoWjAiLCJzY29wZSI6IiIsInBlcm1pc3Npb25zIjpbImRlbGV0ZTphY3RvciIsImRlbGV0ZTptb3ZpZSIsImdldDphY3RvcnMiLCJnZXQ6bW92aWVzIiwicGF0Y2g6YWN0b3IiLCJwYXRjaDptb3ZpZSIsInBvc3Q6YWN0b3IiLCJwb3N0Om1vdmllIl19.lUAtEwsqSY9TERG5mYQP-L0qfls2I_F_uBddXz7eMaxO3gBuRreDUY3trLUIoPrIgO09usNhf7voiVPZyA0nPz9KHnxpm8G7BKSZ6fhMUY9rV4qOODyOTMpB3c2CFZWMH80FVxUS5Qf0nLMkpGJYACWYRfv7M7kl6Rb71vqBrwOZKkwJDjTKi8XJoYZebT7nrUj3ahU5p2bkyvYlb9GlQw-5BuNt0Rj5TCA97cRkPWO3B2dt8n9gJRnUU0OPtNlSxqPyNV1ThMDialWU0ko2dvpSXrDDxpIx9Tj8P6w6D8YWzq4BNg2th8bcCbnax-1ltaa3r8FAVmSkkNJ_kOTlAg",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "41e07d52-d2e9-4100-a8a5-1aef8f7a7a0b",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "ab1233f5-7c81-4fd2-b043-4de07dfccbba",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"variable": [
+		{
+			"id": "4cdf0bf3-2986-4478-8890-cab7dd1ad32b",
+			"key": "host",
+			"value": "localhost:5000"
+		}
+	],
+	"protocolProfileBehavior": {}
+}

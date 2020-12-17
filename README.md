@@ -54,7 +54,7 @@ Setting the `FLASK_APP` variable to `app` directs flask to use the `app` directo
 
 # Testing Endpoints in development
 
-There is a postman collection added in the project named "" for testing the endpoints with different tokens for differnet users, use it to test the endpoints.
+There is a postman collection added in the project named "capstone_FSND_development" for testing the endpoints with different tokens for differnet users, use it to test the endpoints.
 
 # Testing Endpoints in prod
 
@@ -63,11 +63,8 @@ URL
 https://capstonefsnd2020.herokuapp.com/
 ```
 
-There is a postman collection added in the project named "" for testing the endpoints in prodction or the deployed the project in heroku with different tokens for differnet users.
+There is a postman collection added in the project named "capstone_FSND_prod" for testing the endpoints in prodction or the deployed the project in heroku with different tokens for differnet users.
 
-# AUTH
-
-Auth0 is used for authentication in this project , if you need new tokens 
 
 ## Roles
 The app use Role-based access cotrol to restrict access and to give different permissions to differnet users
