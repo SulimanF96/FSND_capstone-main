@@ -3,7 +3,7 @@ import unittest
 import json
 from flask_sqlalchemy import SQLAlchemy
 
-from app import create_app
+from app import app
 from models import setup_db, Movie, Actor, db_drop_and_create_all
 
 
@@ -16,7 +16,7 @@ class CastingAgencyTestCase(unittest.TestCase):
 
     def setUp(self):
         """Define test variables and initialize app."""
-        self.app = create_app()
+        self.app = app
         self.client = self.app.test_client
         self.database_name = "casting_agency_test"
         self.database_path = "postgres://{}/{}".format('postgres:1234Qwer@localhost:5432', self.database_name)
