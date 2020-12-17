@@ -16,7 +16,7 @@ CORS(app)
 def index():
       return jsonify({
               "success": True,
-              "Project":"Welcome to casting agency capstone project",
+              "Project":"Welcome to casting agency capstone project!",
     })
   
 @app.route('/movies')
