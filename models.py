@@ -4,7 +4,7 @@ import json
 import os
 # from flask_migrate import Migrate
 
-ENV = 'dev'
+ENV = 'app'
 
 if ENV == 'dev':
     database_path = 'postgres://postgres:1234Qwer@localhost:5432/casting_agency'
